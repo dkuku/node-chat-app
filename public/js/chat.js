@@ -31,7 +31,7 @@ socket.on('connect', function () {
 });
 
 socket.on('disconnect', function () {
-    console.log('disconnected from erver !');
+    console.log('disconnected from server !');
 });
 
 socket.on('updateUserList', function (users) {
@@ -74,7 +74,6 @@ jQuery('#message-form').on('submit', function (e) {
     e.preventDefault();
     var messageTextBox = jQuery('[name=message]');
     socket.emit('createMessage', {
-        from: 'User',
         text: messageTextBox.val()
     }, function () {
     messageTextBox.val('');
